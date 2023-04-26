@@ -1,3 +1,27 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.pagination-item {
+  flex: 0 1 auto;
+}
+
+.movie-img {
+  width: 300px;
+}
+
+
+
+
+
+.img {
+  width: 200px;
+}
 .App {
   text-align: center;
 }
