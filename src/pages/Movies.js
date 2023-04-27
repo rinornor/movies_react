@@ -54,12 +54,14 @@ function Movies() {
                 <button>Search</button>
             </form>
             <h2>Movies ( Top Rated) </h2>
+            <div className='movies'>
             {
                 movies 
                 && 
                 movies.map(movie => <Movie id={movie.id} title={movie.original_title} poster_path={movie.poster_path} />)
                     
             }
+            </div>
         </div>
         <div className="pagination">
             <div className='pagination-item'><button onClick={prev}>&#8249;</button></div>
