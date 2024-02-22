@@ -49,30 +49,38 @@ function Movies() {
     return (
         <>
         <div>
-            <form onSubmit={handleSearch} className="search">
-                <input type="search" placeholder="Search..." />
-                <button>Search</button>
-            </form>
+            <div className='mb-3 d-flex justify-content-center'>
+                <form onSubmit={handleSearch} className="form-control">
+                    <input type="search" placeholder="Search..." />
+                </form>
+            </div>
             <h2>Movies ( Top Rated) </h2>
             <div className='movies'>
             {
                 movies 
                 && 
-                movies.map(movie => <Movie id={movie.id} title={movie.original_title} poster_path={movie.poster_path} />)
+                movies.map(movie =>
+                    <div className='d-flex flex-column justify-space-between mb-3 w-25'>
+                     <Movie id={movie.id} title={movie.original_title} poster_path={movie.poster_path} />
+                    </div>
+                     
+                     )
                     
             }
             </div>
         </div>
-        <div className="pagination">
-            <div className='pagination-item'><button onClick={prev}>&#8249;</button></div>
-            <div className='pagination-item'><p>
-          {page}
-        </p></div>
-            <div className='pagination-item'><button onClick={next}>&#8250;</button></div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                
+              
+                <li class="page-item page-link"><a onClick={prev}>Previous</a></li>
+                <li class="page-item page-link">{page}</li>
+                
+                <li class="page-item page-link"><a onClick={next}>Next</a></li>
+                
+            </ul>
+        </nav>
         
-        
-        
-      </div>
       </>
     )
 }
